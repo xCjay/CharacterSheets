@@ -13,6 +13,7 @@ public class AbilityPanel extends JPanel {
 
 
     JLabel abilityLabel = new JLabel("Ability: ");
+    String ability;
 
 
     JButton roll = new JButton("Roll your abilities");
@@ -23,7 +24,7 @@ public class AbilityPanel extends JPanel {
         roll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 = fetchAbility();
+                ability = fetchAbility();
                 updateLabel();
             }
         });

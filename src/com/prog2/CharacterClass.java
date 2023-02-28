@@ -1,5 +1,6 @@
 package com.prog2;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -39,4 +40,7 @@ Some classes have an origin to choose at level 1. For example, Sorcerers have to
     public ArrayList<String> proficiencies;
     public Map<String, Boolean> skills;
     public Map<String, Boolean> savingThrows;
+
+
+    public abstract JPanel getSpecialUI();
 }
