@@ -1,4 +1,4 @@
-package com.prog2.charactersheets;
+package com.prog2.enums;
 
 public enum Alignment {
 

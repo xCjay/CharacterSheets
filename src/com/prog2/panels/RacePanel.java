@@ -1,5 +1,7 @@
 package com.prog2.panels;
 
+import com.prog2.races.Dwarf;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +9,10 @@ import java.awt.event.ActionListener;
 public class RacePanel extends JPanel{
 
     JComboBox<String> raceCombo = new JComboBox<>();
-    JComboBox<String> subRace = new JComboBox<>();
+    JComboBox<String> subRaceCombo = new JComboBox<>();
+
+    JLabel raceLabel = new JLabel("Select Race");
+    JLabel subRaceLabel = new JLabel("Select Sub-Race");
     public RacePanel(){
         super();
         raceCombo.addItem("Dragonborn");
@@ -20,6 +25,15 @@ public class RacePanel extends JPanel{
         raceCombo.addItem("Human");
         raceCombo.addItem("Tiefling");
 
+        add(raceLabel);
+        add(raceCombo);
+        add(subRaceLabel);
+        add(subRaceCombo);
+        raceCombo.setSelectedIndex(-1);
+
+
+
+
 
         raceCombo.setSize(200, 100);
 
@@ -28,26 +42,31 @@ public class RacePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                remove(subRace);
                 switch(raceCombo.getSelectedItem().toString()){
-                    case "Dwarf":
-                        subRace.removeAll();
-                        subRace.addItem("Hill Dwarf");
-                        subRace.addItem("Mountain Dwarf");
-                        add(subRace);
+                    case "Dragonborn":
+                        subRaceCombo.removeAllItems();
+                        subRaceCombo.addItem("Standard");
+                        subRaceCombo.addItem("Draconblood");
+                        subRaceCombo.addItem("Ravenite");
+                        subRaceCombo.addItem("Chromatic Dragonborn");
+                        subRaceCombo.addItem("Gem Dragonborn");
+                        subRaceCombo.addItem("Metalic Dragonborn");
                         break;
+
+                    case "Dwarf":
+                        subRaceCombo.removeAllItems();
+                        subRaceCombo.addItem("Hill Dwarf");
+                        subRaceCombo.addItem("Mountain Dwarf");
+                        break;
+
 
 
                     default:
-                        subRace.removeAll();
+                        subRaceCombo.removeAllItems();
                         break;
                 }
-
-
-
             }
         });
-
-        add(raceCombo);
     }
+
 }

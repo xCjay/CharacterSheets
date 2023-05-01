@@ -1,5 +1,7 @@
 package com.prog2.races;
 
+import com.prog2.enums.CreatureSize;
+
 import javax.swing.*;
 
 public class MountainDwarf extends Race {
